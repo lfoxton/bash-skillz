@@ -41,3 +41,5 @@ Administrator commands
 * ps -ef
 * ifconfg
 * sudo
+* chmod
+* chown
