@@ -1,0 +1,28 @@
+[color]
+  ui = auto
+[user]
+  name = <your git username>
+  email = <your git email>
+[apply]
+  whitespace = nowarn
+[alias]
+  co = checkout
+  st = status
+  ci = commit
+  sb = show-branch
+  up = !git fetch origin && git rebase origin/master
+  lg = log --graph --decorate --format='%Cred%h%Creset%C(yellow)%d%Creset %s %Cgreen(%cr)%Creset %C(cyan)%aN%Creset'
+  who = log --format="'%ai %h %aN %s'"
+[branch]
+  autosetupmerge = true
+  autosetuprebase = always
+[showbranch]
+  default = --all   
+[log]
+  decorate = true
+[push]
+  default = current
+[core]
+	editor = /usr/bin/vim
+[url "https://github"]
+	insteadOf = git://github
