@@ -1,15 +1,15 @@
-Bread and Butter Bash Commands
-
 Helpful commands
 ================
 * man
 * ls
 * whoami
 * pwd
-* screen
+* screen/tmux
 * date
 * sudo
 * xargs
+* curl/wget
+* watch
 
 Reading files
 =============
