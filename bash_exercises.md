@@ -9,7 +9,7 @@ Bash one-liner exercises
 	
 	(1b) Use the history and other chained commands to print all distinct commands in your shell history
 
-	(1c) HARDER: List the 15 most common commands that you use
+	(1c) HARDER: List the 15 most common commands that you use, you will need to strip all command arguments
 
 
 Log Analysis
@@ -19,11 +19,11 @@ For these exercises, please use the splendia log files provided
 
 (1) Logger INFO analysis
 
-	(1a) Output how many times the sync job started. Sample: inventoryJob' running...
+	(1a) Output how many times the sync job started.  Sample log line: inventoryJob' running...
 
-	(1b) Output how many times dates were marked as synchronized. Sample: "Synchronized dates: optimisticLock=[2015-04-21 23:59:44], dates=[2015-05-10, ]"
+	(1b) Output how many times dates were marked as synchronized.  Sample log line: "Synchronized dates: optimisticLock=[2015-04-21 23:59:44], dates=[2015-05-10, ]"
 
-	(1c) HARDER: Output the full count of hoteliers that have been synchronized today. Sample: 'Hotelier ............: [5511, 6071]'
+	(1c) HARDER: Output the full count of hoteliers that have been synchronized today.  Sample log line: 'Hotelier ............: [5511, 6071]'
 
 
 (2) Logger ERROR analysis
