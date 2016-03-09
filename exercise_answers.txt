@@ -17,6 +17,8 @@ Bash one-liner exercises
 
 	> history | cut -c 27- | cut -d ' ' -f 2 | sort | uniq -c | sort -n -r | head -20
 
+	NOTE: This answer will only work if you are using the history format given in the .bash_profile file in this repo
+
 
 Log Analysis
 ============
