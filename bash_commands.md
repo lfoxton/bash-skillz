@@ -43,3 +43,4 @@ Administrator commands
 * sudo
 * chmod
 * chown
+luke is awesone
