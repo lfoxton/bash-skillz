@@ -34,6 +34,7 @@ For these exercises, please use the splendia log files provided
 	> grep -c "Job 'inventoryJob' running..." integration-splendia-sync.log
 
 	(1c) HARDER: Output the full count of hoteliers that have been synchronized today. Sample 'Hotelier ............: [5511, 6071]'
+	grep "Hotelier ............:" log_files/integration-splendia-sync.log | cut -c 157- | sed -e 's/]//' | tr ", " "\n" | sort -u
 
 
 (2) Logger ERROR analysis
