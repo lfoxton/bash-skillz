@@ -1,0 +1,66 @@
+EXERCISES
+
+Bash one-liner exercises
+========================
+
+(1) What are your favourite bash commands?
+	
+	(1a) Use commands to list your 100 most recent commands
+
+	> history | head -100
+	
+	(1b) Use the history and other chained command to print all distinct commands in your shell history
+
+	> history | cut -c 27- | cut -d ' ' -f 2 | sort | uniq
+
+	(1c) HARDER: List the 15 most common commands that you use, you will need to strip all command arguments
+
+	> history | cut -c 27- | cut -d ' ' -f 2 | sort | uniq -c | sort -n -r | head -20
+
+
+Log Analysis
+============
+
+For these exercises, please use the splendia log files provided
+
+(1) Logger INFO analysis
+
+	(1a) Output how many times the sync job started. Sample log line: inventoryJob' running...
+
+	> grep -c "Job 'inventoryJob' running..." integration-splendia-sync.log
+
+	(1b) Output how many times dates were marked as synchronized. Sample log line "Synchronized dates: optimisticLock=[2015-04-21 23:59:44], dates=[2015-05-10, ]"
+
+	> grep -c "Job 'inventoryJob' running..." integration-splendia-sync.log
+
+	(1c) HARDER: Output the full count of hoteliers that have been synchronized today. Sample 'Hotelier ............: [5511, 6071]'
+
+
+(2) Logger ERROR analysis
+
+	(2a) Follow a single ERROR thread accross all files using the thread identifier (what is this I hear you ask?)
+
+	> grep -h '14JKLm4NChNn timestamp=1429688401220' log_files/integration-splendia-*.log  | sort
+
+	(2b) Given a single log file, find all line occurences of the word ERROR between 2 9am and 10am
+
+	> grep '^2015-04-22 09:' log_files/integration-splendia-sync.log | grep -c ERROR
+
+	(2c) HARDER: Output all hotelier ids that are experiencing the error
+
+	> grep '^2015-04-22 09:' log_files/integration-splendia-sync.log | grep ERROR | awk -F',' '{print $3}' | sort -u
+
+(3) Case study https://jira.siteminder.com/browse/HBD-127
+
+    (3a) Find out how many HOTELS are affected the hotelbeds currency issue on the 7 march. The logger pattern example is "Error in currency setup. [${roomInfo}] membership room type currency does not match hotelier currency setup. Skipping sync process for this room."
+
+    > grep 'Error in currency setup.' log_files/integration-hotelbeds-sync-engine-5.log |  awk -F',' '{print $3}' | sort -u
+
+
+
+
+
+
+
+
+
